@@ -15,6 +15,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: Debug - List files
+        run: ls -la
+
       - name: Build Docker image
         run: |
           docker build -t my-task-app .
