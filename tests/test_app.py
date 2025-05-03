@@ -1,6 +1,10 @@
 # tests/test_app.py
 import pytest
-from app import app
+from app import app, tasks
+
+@pytest.fixture(autouse=True)
+def clear_tasks():
+    tasks.clear()
 
 @pytest.fixture
 def client():
